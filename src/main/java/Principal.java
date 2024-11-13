@@ -4,14 +4,13 @@ public class Principal {
 	public static void main(String[] args) {
 		ConexaoBanco conexao = new ConexaoBanco("AED","123456","postgres");
 		conexao.conectar();
-		int resultado = conexao.consultar(1);
-		if(resultado != 0) {
-			System.out.println("Existe");
-		}else {
-			System.out.println("Não xiste");
-		}
+		int resultado;
+		resultado = conexao.update(1,"nova descrição", 3.3);
+		System.out.println(resultado);
+		conexao.consultar(1);
 		conexao.desconectar();
 		
 	}
 
 }
+	
